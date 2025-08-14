@@ -1,8 +1,17 @@
 import { Film } from "../models/film.js";
 
+
 export const getAllFilms = async (req, res) => {
   const films = await Film.find();
   res.send(films);
+};
+
+export const getFilmById = async (req, res) => {
+  const film = await Film.findById(req.params.id);
+  if (!film) {
+    return res.status(404).send({ error: "Filme não encontrado" });
+  }
+  res.send(film);
 };
 
 export const createFilm = async (req, res) => {
