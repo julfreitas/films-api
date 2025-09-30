@@ -15,4 +15,4 @@ connectDB().then(() => {
 //deploy na nuvem
 //refatorar o código
 //metodo sort by name
-//buscar por id
+//buscar por id - ok
